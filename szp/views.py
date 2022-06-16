@@ -10,10 +10,11 @@ class SZPLic_view(ListView):
     queryset = SzpLic.objects.all()
 
 
-class SZPDeleteLicView(DeleteView):
+class SZPDeleteLicView(UpdateView):
     model = SzpLic
     template_name = 'szp/delete.html'
     success_url = '/szp/'
+    fields = ['deleted']
 
 
 class SZPLicUpdateView(UpdateView):
@@ -26,7 +27,7 @@ class SZPLicUpdateView(UpdateView):
 def SZPcreate(request):
     error = ''
     if request.method =='POST':
-        form= SzpLicForm(request.POST)
+        form = SzpLicForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('/szp/')#Перенос

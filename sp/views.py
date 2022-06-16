@@ -7,13 +7,15 @@ from .forms import SpLicForm
 class SpLic_view(ListView):
     model = SpLic
     template_name = 'sp/LicView_view.html'
-    queryset =  SpLic.objects.all()
+    queryset =SpLic.objects.all()
 
 
-class SpLicDeleteLicView(DeleteView):
+class SpLicDeleteLicView(UpdateView):
     model = SpLic
     template_name = 'sp/delete.html'
     success_url = '/sp/'
+    #form_class = SpLicForm
+    fields = ['deleted']
 
 
 class SpLicUpdateView(UpdateView):

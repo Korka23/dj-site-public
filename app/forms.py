@@ -42,9 +42,8 @@ class LicAppNewForm(ModelForm):
                 'class': 'from-control',
                 'placeholder': 'Профиль кода специальности'
             }),
-            "deleted": TextInput (attrs={
+            "deleted": CheckboxInput(attrs={
                 'class': 'from-control',
                 'placeholder': 'Вы уверены?'
             })
-
         }

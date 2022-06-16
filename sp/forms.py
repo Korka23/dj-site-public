@@ -1,10 +1,10 @@
 from .models import SpLic
-from django.forms import ModelForm, TextInput, DateInput
+from django.forms import ModelForm, TextInput, DateInput, CheckboxInput
 
 class SpLicForm(ModelForm):
     class Meta:
         model = SpLic
-        fields = ['id', 'fc_mo', 'name', 'c_prof', 'date_b','date_e']
+        fields = ['id', 'fc_mo', 'name', 'c_prof', 'date_b','date_e','deleted']
         widgets = {
             "id": TextInput(attrs={
                 'class': 'from-control',
@@ -30,4 +30,8 @@ class SpLicForm(ModelForm):
                 'class': 'from-control',
                 'placeholder': 'Дата конца действия лицензии'
             }),
+            "deleted": CheckboxInput(attrs={
+                'class': 'from-control',
+                'placeholder': 'Вы уверены?'
+            })
         }

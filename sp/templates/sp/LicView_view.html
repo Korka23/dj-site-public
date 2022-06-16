@@ -13,7 +13,6 @@
             <h3>Навигация</h3>
             <ul>
                 <a href="{% url 'ksg' %}"><li>КСГ</li></a>
-                <a href="{% url 'LicView_view' %}"><li>Лицензии</li></a>
                 <a href="{% url 'App_view' %}"><li>App</li></a>
                 <a href="{% url 'SP_view' %}"><li>SP</li></a>
                 <a href="{% url 'SZP_view' %}"><li>SZP</li></a>
@@ -29,11 +28,11 @@
                     <th>Название МО</th>
                     <th>профиль</th>
                     <th>Дата начала действия лицензии</th>
-                    <th>Дата конца действия лицензии</th>
                 </tr>
             </thead>
             <tbody>
             {% for form in object_list %}
+           {% if form.deleted == False or form.deleted == null %}
                 <tr>
                   <!--   <td>{{ serv.id }}</td>-->
                    <!-- <td>{{ serv.id_mo }}</td> -->
@@ -41,11 +40,11 @@
                     <td>{{ form.name }}</td>
                     <td>{{ form.c_prof}}</td>
                     <td>{{ form.date_b }}</td>
-                    <td>{{ form.date_e}}</td>
                     <td><a href="{% url 'SPcreate' %}"><button class="btn btn-info">Добавить запись</button></a></td>
                     <td><a href="{% url 'SP_update' form.id %}" class="btn btn-warning">Изменить</a></td>
                     <td><a href="{% url 'SP_delete' form.id %}" class="btn btn-danger">Удалить</a></td>
                 </tr>
+            {% endif %}
             {% endfor %}
             </tbody>
 <!-- ><i class="fas fa-plus-circle"> </tbody>-->

@@ -99,7 +99,7 @@ class LicMash(models.Model):
     name = models.CharField(max_length=255, blank=True, null=True)
     c_prof = models.IntegerField()
     date_b = models.DateField(default='01.04.2022')
-    date_e = models.DateField(default='30.04.2022')
+    date_e = models.DateField(blank=True, null=True, default='01.01.2070')
 
     class Meta:
         managed = True

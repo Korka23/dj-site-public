@@ -11,8 +11,9 @@
 <div class="features">
     <h1>Удаление записи</h1>
     <form method="post">
-        {% csrf_token %}<br>
-
+       {% csrf_token %}<br>
+        <p>Вы уверены?</p>
+        <p>{{ form.deleted }}</p>
         <button class="btn btn-danger" type="submit">Удалить</button>
     </form>
 </div>

@@ -10,10 +10,11 @@ class SZP1Lic_view(ListView):
     queryset =  Szp1Lic.objects.all()
 
 
-class SZP1DeleteLicView(DeleteView):
+class SZP1DeleteLicView(UpdateView):
     model = Szp1Lic
     template_name = 'szp1/delete.html'
     success_url = '/szp1/'
+    fields = ['deleted']
 
 
 class SZP1LicUpdateView(UpdateView):

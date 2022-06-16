@@ -12,6 +12,7 @@
     <form method="post">
         <h1>Удаление записи</h1>
         {% csrf_token %}<br>
+        <!---<p>{{ form.c_serv }}</p>-->
         Вы уверены?<br>
         <p>{{ form.deleted }}</p>
         <button class="btn btn-danger" type="submit">Удалить</button>

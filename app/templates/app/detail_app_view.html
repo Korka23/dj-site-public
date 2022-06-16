@@ -12,14 +12,19 @@
 <form method="post" >
     <h1>Форма изменения записи</h1>
     {% csrf_token %}<br>
-    <p>{{ form.id_prof }}</p>
+    <p>Номер МО</p>
     <p>{{ form.fc_mo }}</p>
+    <p>Название МО</p>
     <p>{{ form.name }}</p>
+    <p>Дата начала действия лицензии</p>
     <p>{{ form.date_b }}</p>
+    <p>Федеральный профиль</p>
     <p>{{ form.idpr}}</p>
+    <p>Номер диспанцеризации</p>
     <p>{{ form.disp}}</p>
-    <p>{{ form.date_e}}</p>
+    <p>Номер приказа</p>
     <p>{{ form.lic_num}}</p>
+    <p>Профиль кода специальности</p>
     <p>{{ form.c_serv}}</p>
     <button class="btn btn-warning" type="submit">Изменить</button>
 </form>

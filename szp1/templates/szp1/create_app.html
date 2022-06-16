@@ -12,11 +12,16 @@
     <h1>Форма добавления записи</h1>
     <form method="post" > <!---action="'/ksg/create">--->
         {% csrf_token %}<br>
+         Номер МО<br>
         {{ form.fc_mo }}<br>
+        Название МО<br>
         {{ form.name }}<br>
-        {{ form.c_prof}}<br>
+        Код профиля<br>
+        {{ form.c_prof }}<br>
+        Дата начала действия лицензии<br>
         {{ form.date_b }}<br>
-        {{ form.date_e}}<br>
+        Дата конца действия лицензии(не изменять)<br>
+        {{ form.date_e }}<br>
         <p>{{error}}</p>
         <button class="btn btn-success" type="submit">Добавить статью</button>
     </form>

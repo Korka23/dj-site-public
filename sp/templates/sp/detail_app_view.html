@@ -12,12 +12,15 @@
 <form method="post" >
     <h1>Форма изменения записи</h1>
     {% csrf_token %}<br>
-    <p>{{ form.id_prof }}</p>
-    <p>{{ form.fc_mo }}</p>
-    <p>{{ form.name }}</p>
-    <p>{{ form.c_prof}}</p>
-    <p>{{ form.date_b }}</p>
-    <p>{{ form.date_e}}</p>
+        Номер МО<br>
+        {{ form.fc_mo }}<br>
+        Название МО<br>
+        {{ form.name }}<br>
+        Код профиля<br>
+        {{ form.c_prof }}<br>
+        Дата начала действия лицензии<br>
+        {{ form.date_b }}<br>
+    <p>{{error}}</p>
     <button class="btn btn-warning" type="submit">Изменить</button>
 </form>
 </div>

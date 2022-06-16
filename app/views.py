@@ -18,8 +18,9 @@ class CreateLicAppNew(DetailView):
 class AppDeleteLicView(UpdateView):
     model = LicAppNew
     template_name = 'app/delete.html'
-    form_class = LicAppNewForm
+    #form_class = LicAppNewForm
     success_url = '/app/'
+    fields = ['deleted']
 
 
 class AppLicUpdateView(UpdateView):
