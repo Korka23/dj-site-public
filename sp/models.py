@@ -8,11 +8,12 @@ class SpLic(models.Model):
     date_b = models.DateField()
     date_e = models.DateField(blank=True, null=True, default='01.01.2070')
     deleted = models.BooleanField(default=False, blank=True, null=True)
+    idpr = models.IntegerField(blank=True, null=True)
 
     class Meta:
         managed = True
         db_table = 'sp_lic'
-        ordering = ['fc_mo']
+        ordering = ['fc_mo', 'c_prof']
 
     def get_absolute_url(self):
         return f'/sp/{self.id}'

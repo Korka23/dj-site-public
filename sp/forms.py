@@ -4,7 +4,7 @@ from django.forms import ModelForm, TextInput, DateInput, CheckboxInput
 class SpLicForm(ModelForm):
     class Meta:
         model = SpLic
-        fields = ['id', 'fc_mo', 'name', 'c_prof', 'date_b','date_e','deleted']
+        fields = ['id', 'fc_mo', 'name', 'c_prof','idpr', 'date_b','date_e','deleted']
         widgets = {
             "id": TextInput(attrs={
                 'class': 'from-control',
@@ -20,7 +20,11 @@ class SpLicForm(ModelForm):
             }),
             "c_prof": TextInput(attrs={
                 'class': 'from-control',
-                'placeholder': 'профиль'
+                'placeholder': 'код профиля'
+            }),
+            "idpr": TextInput(attrs={
+                'class': 'from-control',
+                'placeholder': 'Федеральный код'
             }),
             "date_b": DateInput(attrs={
                 'class': 'from-control',

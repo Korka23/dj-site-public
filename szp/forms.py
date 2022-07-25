@@ -4,7 +4,7 @@ from django.forms import ModelForm, TextInput, DateInput
 class SzpLicForm(ModelForm):
     class Meta:
         model = SzpLic
-        fields = ['id', 'fc_mo', 'name','c_prof', 'date_b','date_e']
+        fields = ['id', 'fc_mo', 'name','c_prof','idpr', 'date_b','date_e']
         widgets = {
             "id_prof": TextInput(attrs={
                 'class': 'from-control',
@@ -20,7 +20,11 @@ class SzpLicForm(ModelForm):
             }),
             "c_prof": TextInput(attrs={
                 'class': 'from-control',
-                'placeholder': 'профиль'
+                'placeholder': 'Код профиля(Наш)'
+            }),
+            "idpr": TextInput(attrs={
+                'class': 'from-control',
+                'placeholder': 'Федеральный Код'
             }),
             "date_b": DateInput(attrs={
                 'class': 'from-control',

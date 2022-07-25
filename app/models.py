@@ -16,7 +16,7 @@ class LicAppNew(models.Model):
         managed = True
         db_table = 'lic_app_new'
         #ordering = ['fc_mo']
-        ordering = ['fc_mo']
+        ordering = ['fc_mo','c_serv']
 
     def get_absolute_url(self):
         return f'/app/{self.id_prof}'

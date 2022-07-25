@@ -26,7 +26,8 @@
                 <tr>
                     <th>Номер МО</th>
                     <th>Название МО</th>
-                    <th>профиль</th>
+                    <th>Код профиля(Наш)</th>
+                    <th>Федеральный код</th>
                     <th>Дата начала действия лицензии</th>
                 </tr>
             </thead>
@@ -39,6 +40,7 @@
                     <td>{{ form.fc_mo }}</td>
                     <td>{{ form.name }}</td>
                     <td>{{ form.c_prof}}</td>
+                    <td>{{ form.idpr }}</td>
                     <td>{{ form.date_b }}</td>
                     <td><a href="{% url 'SZPcreate' %}"><button class="btn btn-info">Добавить запись</button></a></td>
                     <td><a href="{% url 'SZP_update' form.id %}" class="btn btn-warning">Изменить</a></td>
