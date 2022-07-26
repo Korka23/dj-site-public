@@ -32,17 +32,18 @@
 <!--  <caption>Профили</caption>-->
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>C_PROF</th>
-                    <th>smj_prof</th>
-                    <th>KSG</th>
+                    <th>Название КСГ</th>
+                    <th>Номер профиля ксг</th>
+                    <th>Смежные профили</th>
+                    <th>КСГ</th>
+                    <th>Кнопка добавления новой лицензии </th>
+                    <th>Кнопка измения этой лицензии</th>
+                    <th>Удаление лицензии</th>
                 </tr>
             </thead>
             <tbody>
             {% for serv in object_list %}
                 <tr>
-                    <td>{{ serv.id }}</td>
                     <td>{{ serv.name }}</td>
                     <td>{{ serv.c_prof }} </td>
                     <td>{{ serv.smj_prof}}</td>

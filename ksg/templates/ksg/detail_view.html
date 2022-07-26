@@ -12,10 +12,13 @@
 <form method="post" >
     <h1>Форма изменения записи</h1>
     {% csrf_token %}<br>
-    <p>{{form.id}}</p>
+    <p>Название КСГ</p>
     <p>{{form.name}}</p>
+    <p>Номер профиля ксг</p>
     <p>{{form.c_prof}}</p>
+    <p>Смежные профили</p>
     <p>{{form.smj_prof}}</p>
+    <p>КСГ</p>
     <p>{{form.KSG}}</p>
     <button class="btn btn-warning" type="submit">Изменить</button>
 </form>

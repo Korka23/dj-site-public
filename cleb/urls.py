@@ -17,16 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from ksg.views import LicView_view, index, CreateLic, LicUpdateView, DeleteLicView
+from ksg.views import index
 urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
     path('ksg/',include('ksg.urls')),
     path('', index, name='home'),
-    path('LicView/', LicView_view.as_view(),name='LicView_view'),
-    path('LicView/create', CreateLic, name='LicView_create'),
-    path('LicView/<int:pk>/update',LicUpdateView.as_view(), name='LicView_update'),
-    path('LicView/<int:pk>/delete',DeleteLicView.as_view(), name='LicView_delete'),
     path('app/', include('app.urls')),
     path('sp/', include('sp.urls')),
     path('szp/', include('szp.urls')),
