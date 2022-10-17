@@ -13,10 +13,11 @@
             <h3>Навигация</h3>
             <ul>
                 <a href="{% url 'ksg' %}"><li>КСГ</li></a>
-                <a href="{% url 'App_view' %}"><li>App</li></a>
-                <a href="{% url 'SP_view' %}"><li>SP</li></a>
-                <a href="{% url 'SZP_view' %}"><li>SZP</li></a>
-                <a href="{% url 'SZP1_view' %}"><li>SZP1</li></a>
+                <a href="{% url 'App_view' %}"><li>АПП</li></a>
+                <a href="{% url 'app_list' %}"><li>АПП_поиск</li></a>
+                <a href="{% url 'SP_view' %}"><li>СП</li></a>
+                <a href="{% url 'SZP_view' %}"><li>СЗП</li></a>
+                <a href="{% url 'SZP1_view' %}"><li>СЗП1</li></a>
             </ul>
         </aside>
       <main>
@@ -24,7 +25,7 @@
                 <table class="table">
             <thead>
                 <tr>
-                    <th>Номер МО</th>
+                    <th>Номер МО </th>
                     <th>Название МО</th>
                     <th>Дата начала действия лицензии</th>
                     <th>Федеральный Профиль</th>
@@ -37,21 +38,21 @@
                 </tr>
             </thead>
             <tbody>
-          {% for form in object_list %}
-           {% if form.deleted == False or form.deleted == null %}
+          {% for i in object_list %}
+           {% if i.deleted == False or i.deleted == null %}
                 <tr>
                   <!--   <td>{{ serv.id }}</td>-->
                    <!-- <td>{{ serv.id_mo }}</td> -->
-                    <td>{{ form.fc_mo }}</td>
-                    <td>{{ form.name }}</td>
-                    <td>{{ form.date_b }}</td>
-                    <td>{{ form.idpr}}</td>
-                    <td>{{ form.disp}}</td>
-                    <td>{{ form.lic_num}}</td>
-                    <td>{{ form.c_serv}}</td>
+                    <td>{{ i.fc_mo }}</td>
+                    <td>{{ i.name }}</td>
+                    <td>{{ i.date_b }}</td>
+                    <td>{{ i.get_idpr_display}}</td>
+                    <td>{{ i.disp}}</td>
+                    <td>{{ i.lic_num}}</td>
+                    <td>{{ i.get_c_serv_display }}</td>
                     <td><a href="{% url 'Appcreate' %}"><button class="btn btn-info">Добавить запись</button></a></td>
-                    <td><a href="{% url 'App_update' form.id_prof %}" class="btn btn-warning">Изменить</a></td>
-                    <td><a href="{% url 'App_delete' form.id_prof %}" class="btn btn-danger">Удалить</a></td>
+                    <td><a href="{% url 'App_update' i.id_prof %}" class="btn btn-warning">Изменить</a></td>
+                    <td><a href="{% url 'App_delete' i.id_prof %}" class="btn btn-danger">Удалить</a></td>
                 </tr>
            {% endif %}
             {% endfor %}
@@ -60,5 +61,6 @@
             </table>
             </div>
         </main>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     </body>
 </html>

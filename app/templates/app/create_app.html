@@ -10,7 +10,8 @@
 <body>
 <div class="features">
     <h1>Форма добавления записи</h1>
-    <form method="post" > <!---action="'/ksg/create">--->
+  <form method="post" >
+<!--<form action="" method="post">-->
         {% csrf_token %}<br>
          Номер МО<br>
         {{ form.fc_mo }}<br>

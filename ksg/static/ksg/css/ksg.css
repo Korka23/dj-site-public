@@ -70,9 +70,11 @@ td {
 }
 */
 form {
-   margin-left: 43%;
-   width 500px;
+   /*margin-left: 43%;*/
+   width 300px;
    margin-top: 50px;
+   word-wrap: break-word;
+
 }
 aside {
     float: left;
@@ -103,9 +105,30 @@ aside ul li:hover, aside ul a:hover{
 h1 {
     front-size: 100px;
 }
+/*
 p {
     front-size:800px;
 }
+*/
 main {
     height: 100vh;
 }
+/*
+select {
+    font-style: oblique 40deg;
+    word-wrap: break-word;
+}
+.form-control{
+    width: 400px;
+    word-wrap: break-word;
+}
+select:not(:-internal-list-box) {
+    width: 400px;
+    word-wrap: break-word;
+}
+*/
+#id_c_serv {
+    width:200px;
+}
+
+
