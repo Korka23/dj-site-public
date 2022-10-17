@@ -1,0 +1,37 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'ksg/css/ksg.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+</head>
+<body>
+<div class="features">
+    <h1>Форма добавления записи</h1>
+<!--    <form method="post" >-->
+<form action="" method="post">
+        {% csrf_token %}<br>
+         Номер МО<br>
+        {{ form.fc_mo }}<br>
+         Название МО<br>
+        {{ form.name }}<br>
+        Дата начала действия лицензии<br>
+        {{ form.date_b }}<br>
+        Дата конца действия лицензии(не изменять)<br>
+        {{ form.date_e }}<br>
+        Федеральный профиль<br>
+        {{ form.idpr}}<br>
+        Номер диспанцеризации<br>
+        {{ form.disp}}<br>
+        Номер приказа<br>
+        {{ form.lic_num}}<br>
+        Профиль кода специальности<br>
+        {{ form.c_serv}}<br>
+        <p>{{error}}</p>
+        <button class="btn btn-success" type="submit">Добавить статью</button>
+    </form>
+</div>
+</body>
+</html>
