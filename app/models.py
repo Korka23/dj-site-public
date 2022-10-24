@@ -1701,7 +1701,7 @@ class LicAppNew(models.Model):
     class Meta:
         managed = True
         db_table = 'lic_app_new'
-        #ordering = ['fc_mo']
+        ordering = ['fc_mo']
         #ordering = ['fc_mo','c_serv']
 
 

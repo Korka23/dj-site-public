@@ -1,38 +1,59 @@
 from .models import SzpLic
-from django.forms import ModelForm, TextInput, DateInput
+from django import forms
+from app.models import FC_MO_CHOICES, IDPR_CHOICES
+from sp.models import C_PROF_CHOICES
 
-class SzpLicForm(ModelForm):
+class SzpLicForm(forms.ModelForm):
     class Meta:
         model = SzpLic
-        fields = ['id', 'fc_mo', 'name','c_prof','idpr', 'date_b','date_e']
+        fc_mo = forms.ChoiceField(choices=FC_MO_CHOICES)
+        c_prof = forms.ChoiceField(choices=C_PROF_CHOICES)
+        idpr = forms.ChoiceField(choices=IDPR_CHOICES)
+        fields = ['id', 'fc_mo', 'name','date_b','date_e']
         widgets = {
-            "id_prof": TextInput(attrs={
+            "id_prof": forms.TextInput(attrs={
                 'class': 'from-control',
                 'placeholder': 'id проф'
             }),
-            "fc_mo": TextInput(attrs={
-                'class': 'from-control',
-                'placeholder': 'Номер МО'
-            }),
-            "name": TextInput(attrs={
+
+            "name": forms.TextInput(attrs={
                 'class': 'from-control',
                 'placeholder': 'Название МО'
             }),
-            "c_prof": TextInput(attrs={
-                'class': 'from-control',
-                'placeholder': 'Код профиля(Наш)'
-            }),
-            "idpr": TextInput(attrs={
-                'class': 'from-control',
-                'placeholder': 'Федеральный Код'
-            }),
-            "date_b": DateInput(attrs={
+            "date_b": forms.DateInput(attrs={
                 'class': 'from-control',
                 'placeholder': 'Дата начала действия лицензии'
             }),
 
-            "date_e": DateInput(attrs={
+            "date_e": forms.DateInput(attrs={
                 'class': 'from-control',
                 'placeholder': 'Дата конца действия лицензии'
             }),
+        }
+
+class SzpLicForm2(forms.ModelForm):
+    class Meta:
+        model = SzpLic
+        fields = ['id', 'fc_mo', 'name', 'date_b',  'date_e',  'deleted', 'idpr', 'c_prof']
+        widgets = {
+            "date_b": forms.DateInput(attrs={
+                'class': 'from-control',
+                'placeholder': 'Дата начала действия лицензии'
+            }),
+            "disp": forms.TextInput(attrs={
+                'class': 'from-control',
+                'placeholder': 'Диспан'
+            }),
+            "date_e": forms.DateInput(attrs={
+                'class': 'from-control',
+                'placeholder': 'Дата конца действия лицензии'
+            }),
+            "lic_num": forms.TextInput(attrs={
+                'class': 'from-control',
+                'placeholder': 'Приказ'
+            }),
+            "deleted": forms.CheckboxInput(attrs={
+                'class': 'from-control',
+                'placeholder': 'Вы уверены?'
+            })
         }

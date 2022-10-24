@@ -10,4 +10,5 @@ urlpatterns = [
     path('', views.SZPLic_view.as_view(), name='SZP_view'),
     path('<int:pk>/update', views.SZPLicUpdateView.as_view(), name='SZP_update'),
     path('<int:pk>/delete', views.SZPDeleteLicView.as_view(), name='SZP_delete'),
+    path('snippet', views.SnippetListView.as_view(),name='szp_list')
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

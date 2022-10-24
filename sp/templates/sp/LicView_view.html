@@ -14,9 +14,11 @@
             <ul>
                 <a href="{% url 'ksg' %}"><li>КСГ</li></a>
                 <a href="{% url 'App_view' %}"><li>App</li></a>
-                <a href="{% url 'SP_view' %}"><li>SP</li></a>
-                <a href="{% url 'SZP_view' %}"><li>SZP</li></a>
-                <a href="{% url 'SZP1_view' %}"><li>SZP1</li></a>
+                <a href="{% url 'app_list' %}"><li>АПП_поиск</li></a>
+                <a href="{% url 'SP_view' %}"><li>СП</li></a>
+                <a href="{% url 'sp_list' %}"><li>СП_поиск</li></a>
+                <a href="{% url 'SZP_view' %}"><li>СЗП</li></a>
+                <a href="{% url 'SZP1_view' %}"><li>СЗП1</li></a>
             </ul>
         </aside>
       <main>
@@ -35,19 +37,19 @@
                 </tr>
             </thead>
             <tbody>
-            {% for form in object_list %}
-           {% if form.deleted == False or form.deleted == null %}
+            {% for i in object_list %}
+           {% if i.deleted == False or i.deleted == null %}
                 <tr>
                   <!--   <td>{{ serv.id }}</td>-->
                    <!-- <td>{{ serv.id_mo }}</td> -->
-                    <td>{{ form.fc_mo }}</td>
-                    <td>{{ form.name }}</td>
-                    <td>{{ form.c_prof}}</td>
-                    <td>{{ form.idpr}}</td>
-                    <td>{{ form.date_b }}</td>
+                    <td>{{ i.fc_mo }}</td>
+                    <td>{{ i.name }}</td>
+                    <td>{{ i.get_c_prof_display}}</td>
+                    <td>{{ i.idpr}}</td>
+                    <td>{{ i.date_b }}</td>
                     <td><a href="{% url 'SPcreate' %}"><button class="btn btn-info">Добавить запись</button></a></td>
-                    <td><a href="{% url 'SP_update' form.id %}" class="btn btn-warning">Изменить</a></td>
-                    <td><a href="{% url 'SP_delete' form.id %}" class="btn btn-danger">Удалить</a></td>
+                    <td><a href="{% url 'SP_update' i.id %}" class="btn btn-warning">Изменить</a></td>
+                    <td><a href="{% url 'SP_delete' i.id %}" class="btn btn-danger">Удалить</a></td>
                 </tr>
             {% endif %}
             {% endfor %}

@@ -82,7 +82,7 @@ class PersonCreationForm(forms.ModelForm):
             except (ValueError, TypeError):
                 pass  # invalid input from the client; ignore and fallback to empty City queryset
         elif self.instance.pk:
-            self.fields['fc_mo'].queryset = self.instance.LicAppNew.objects.order_by('fc_mo')
+            self.fields['fc_mo'].queryset = self.instance.LicAppNew.objects.order_by('fc_mo')do
 '''
 #
 '''
