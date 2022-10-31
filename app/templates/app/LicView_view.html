@@ -9,8 +9,8 @@
     </head>
     <body>
         <aside>
-            <img src="{% static 'ksg/img/TFOMS_logo.jpg' %}" alt="Лого">
-            <h3>Навигация</h3>
+<!--            <img src="{% static 'ksg/img/TFOMS_logo.jpg' %}" alt="Лого">-->
+            <p>Навигация</p>
             <ul>
                 <a href="{% url 'ksg' %}"><li>КСГ</li></a>
                 <a href="{% url 'App_view' %}"><li>АПП</li></a>
@@ -31,10 +31,12 @@
                     <th>Номер МО </th>
                     <th>Название МО</th>
                     <th>Дата начала действия лицензии</th>
-                    <th>Федеральный Профиль</th>
+                    <th>Номер федерального кода</th>
+                    <th>Федеральный код</th>
                     <th>Диспан</th>
                     <th>Приказ</th>
-                    <th>Код Специальности(профиля)(Наш) </th>
+                    <th>Код Специальности(C_SERV)(Наш) </th>
+                    <th>Специальность(Наша) </th>
                     <th>Кнопка добавления новой лицензии </th>
                     <th>Кнопка измения этой лицензии</th>
                     <th>Удаление лицензии</th>
@@ -44,14 +46,14 @@
           {% for i in object_list %}
            {% if i.deleted == False or i.deleted == null %}
                 <tr>
-                  <!--   <td>{{ serv.id }}</td>-->
-                   <!-- <td>{{ serv.id_mo }}</td> -->
                     <td>{{ i.fc_mo }}</td>
                     <td>{{ i.name }}</td>
                     <td>{{ i.date_b }}</td>
+                    <td>{{ i.idpr}}</td>
                     <td>{{ i.get_idpr_display}}</td>
                     <td>{{ i.disp}}</td>
                     <td>{{ i.lic_num}}</td>
+                    <td>{{ i.c_serv}}</td>
                     <td>{{ i.get_c_serv_display }}</td>
                     <td><a href="{% url 'Appcreate' %}"><button class="btn btn-info">Добавить запись</button></a></td>
                     <td><a href="{% url 'App_update' i.id_prof %}" class="btn btn-warning">Изменить</a></td>
@@ -60,7 +62,6 @@
            {% endif %}
             {% endfor %}
             </tbody>
-<!-- ><i class="fas fa-plus-circle"> </tbody>-->
             </table>
             </div>
         </main>

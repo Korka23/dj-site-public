@@ -38,10 +38,12 @@
                     <th>Номер МО </th>
                     <th>Название МО</th>
                     <th>Дата начала действия лицензии</th>
+                    <th>Код Федеральный Профиль</th>
                     <th>Федеральный Профиль</th>
                     <th>Диспан</th>
                     <th>Приказ</th>
                     <th>Код Специальности(профиля)(Наш) </th>
+                    <th>Специальности(профиля)(Наш) </th>
                     <th>Кнопка добавления новой лицензии </th>
                     <th>Кнопка измения этой лицензии</th>
                     <th>Удаление лицензии</th>
@@ -55,9 +57,11 @@
         <td>{{ i.fc_mo }}</td>
         <td>{{ i.name }}</td>
         <td>{{ i.date_b }}</td>
+        <td>{{ i.idpr}}</td>
         <td>{{ i.get_idpr_display }}</td>
         <td>{{ i.disp}}</td>
         <td>{{ i.lic_num}}</td>
+        <td>{{ i.c_serv}}</td>
         <td>{{ i.get_c_serv_display }}</td>
         <td><a href="{% url 'Appcreate' %}"><button class="btn btn-info">Добавить запись</button></a></td>
         <td><a href="{% url 'App_update' i.id_prof %}" class="btn btn-warning">Изменить</a></td>

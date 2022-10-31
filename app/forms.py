@@ -7,7 +7,7 @@ class LicAppNewForm(ModelForm):
 
     class Meta:
         model = LicAppNew
-        fc_mo = forms.ChoiceField(choices=C_SERV_CHOICES)
+        fc_mo = forms.ChoiceField(choices=FC_MO_CHOICES_FILT)
         c_serv = forms.ChoiceField(choices=C_SERV_CHOICES)
         idpr = forms.ChoiceField(choices=IDPR_CHOICES)
         fields = ['id_prof', 'fc_mo', 'name', 'date_b', 'disp', 'date_e', 'lic_num', 'deleted','c_serv']
